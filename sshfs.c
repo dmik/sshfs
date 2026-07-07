@@ -4518,7 +4518,7 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-#if !defined(__CYGWIN__)
+#if !defined(__CYGWIN__) && !defined(__APPLE__)
 	res = fcntl(fuse_session_fd(se), F_SETFD, FD_CLOEXEC);
 	if (res == -1)
 		perror("WARNING: failed to set FD_CLOEXEC on fuse device");
